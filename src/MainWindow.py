@@ -17,7 +17,7 @@ class MainWindow:
         self.builder = Gtk.Builder()
 
 
-        self.builder.add_from_file("MainWindow.glade")
+        self.builder.add_from_file("ui/MainWindow.glade")
         self.builder.connect_signals(self)
 
 
