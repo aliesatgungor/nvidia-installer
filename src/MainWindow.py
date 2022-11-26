@@ -2,7 +2,7 @@ import gi
 import time
 import datetime
 import subprocess
-
+import os
 
 
 gi.require_version('Gtk', '3.0')
@@ -17,7 +17,7 @@ class MainWindow:
         self.builder = Gtk.Builder()
 
 
-        self.builder.add_from_file("ui/MainWindow.glade")
+        self.builder.add_from_file(os.path.dirname(os.path.abspath(__file__)) + "/../ui/MainWindow.glade")
         self.builder.connect_signals(self)
 
 
@@ -48,9 +48,10 @@ class MainWindow:
         output = process.stdout.decode("utf-8") 
         worker = output.split()
         worker = worker[-2]
+        
         time.sleep(2)
+        
         self.output_label.set_label(output) 
-        print("pkexec apt install {}".format(worker))
         komut = "pkexec apt install {}".format(worker)
         process = subprocess.run(komut.split(),capture_output= True)
         output = process.stdout.decode("utf-8") 
