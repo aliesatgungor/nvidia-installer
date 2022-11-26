@@ -32,7 +32,7 @@ class MainWindow:
     
     def defineComponents(self):
         self.output_label = self.builder.get_object("output_label")
-    def on_detect_clicked(self):
+    def on_detect_clicked(self,btn):
         command = "lspci | grep VGA"
         process = subprocess.run(command.split(),capture_output=True)   
         output = process.stdout.decode("utf-8") 
