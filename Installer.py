@@ -3,6 +3,7 @@ import subprocess
 
 import gi
 gi.require_version('Gtk', '3.0')
+
 from gi.repository import Gtk, GLib, Gio
 
 from MainWindow import MainWindow
@@ -14,10 +15,10 @@ class Uygulama(Gtk.Application):
             flags=Gio.ApplicationFlags.FLAGS_NONE,
             **kwargs)
     
-    def do_activate(self): # do_active metodu program açıldığında çalışır.
-        self.window = MainWindow(self) # MainWindow nesnemizi oluşturduk.
-        # Burada sadece oluşturmamız yeterli çünkü göstermeyi MainWindow'un içinde yaptık.
+    def do_activate(self):
+        self.window = MainWindow(self) 
+     
 
-# Uygulama nesnemizi olusturup calistiralim.
+
 app = Uygulama()
 app.run(sys.argv)
