@@ -1,5 +1,5 @@
 # nvidia-installer
-Nvidia propertiary driver GUI installer for GNU/Linux 
+Nvidia propertiary driver GUI installer for Debian Distros like Pardus
 
 
 
